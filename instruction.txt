@@ -1,0 +1,41 @@
+Q1: $docker build . (node)
+ $docker build -t python-image (python)
+Q2: $docker run -p 3002:80  nomImage
+$ docker run -it python
+docker ps
+docker stop nomContainer
+Q3:  $docker run -it --name nomContainer nomImage
+ $docker run -p  3001:80 --name nomContainer nomImage
+Q4:  $docker rm containerId
+ $docker container prune
+ $docker image prune
+Q5: $docker build  Name .
+ $docker build -t Name .
+Q6:$docker run -p 3002:80 --rm --name containerName imageName
+$docker stop nomContainer
+$docker ps
+
+
+
+Dockerfile Node
+FROM node
+WORKDIR /app
+COPY . /app
+RUN npm install
+EXPOSE 80
+CMD ["node","server.js"]
+
+
+
+Dockerfile python
+FROM python
+WORKDIR  /app
+COPY . /app
+CMD ["python","bmi.py"]
+
+
+
+
+
+
+
